@@ -1,0 +1,47 @@
+{
+  "version": 8,
+  "name": "mlog-style-bottom",
+  "metadata": {"maputnik:renderer": "mbgljs"},
+  "sources": {
+    "world": {
+      "type": "vector",
+      "tiles": [
+        "https://geoserver.dev.91weather.com/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=mlog:world&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=application/vnd.mapbox-vector-tile&TILECOL={x}&TILEROW={y}"
+      ],
+      "minZoom": 0,
+      "maxZoom": 14
+    },
+    "china-prov": {
+      "type": "vector",
+      "tiles": [
+        "https://geoserver.dev.91weather.com/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=mlog:china-prov&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=application/vnd.mapbox-vector-tile&TILECOL={x}&TILEROW={y}"
+      ],
+      "minZoom": 0,
+      "maxZoom": 14
+    }
+  },
+  "sprite": "",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {"background-color": "rgba(40, 154, 224, 1)"}
+    },
+    {
+      "id": "world-fill",
+      "type": "fill",
+      "source": "world",
+      "source-layer": "world",
+      "paint": {"fill-color": "rgba(255, 255, 255, 1)"}
+    },
+    {
+      "id": "china-prov-fill",
+      "type": "fill",
+      "source": "china-prov",
+      "source-layer": "china-prov",
+      "paint": {"fill-color": "rgba(230, 224, 224, 1)"}
+    }
+  ],
+  "id": "drf36ny9u"
+}

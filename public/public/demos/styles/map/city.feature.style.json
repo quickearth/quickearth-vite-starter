@@ -1,0 +1,10 @@
+{
+  "polygon": {
+    "fill": false,
+    "zoomMin": 7,
+    "lineStyle": {
+      "color": "rgb(200,200,200)",
+      "width": 0.5
+    }
+  }
+}

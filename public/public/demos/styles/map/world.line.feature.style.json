@@ -1,0 +1,9 @@
+{
+  "polygon": {
+    "fill": false,
+    "lineStyle": {
+      "color": "gray",
+      "width": 0.3
+    }
+  }
+}

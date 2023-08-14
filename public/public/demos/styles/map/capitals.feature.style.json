@@ -1,0 +1,30 @@
+{
+  "point": {
+    "fill": true,
+    "size": 4,
+    "visible": true,
+    "color": "red",
+    "strokeColor": "pink",
+    "strokeWidth": 2,
+    "zoomMax": 6,
+    "label": [
+      {
+        "text": {
+          "data": "$Capital",
+          "font": "15px Arial",
+          "avoidCollison": true,
+          "offset": [
+            0,
+            -12
+          ],
+          "color": [
+            0,
+            0,
+            0,
+            0.8
+          ]
+        }
+      }
+    ]
+  }
+}

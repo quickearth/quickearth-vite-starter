@@ -1,0 +1,12 @@
+{
+  "polygon": {
+    "shadowColor": "rgba(0, 0, 0, 0)",
+    "shadowBlur": 5,
+    "shadowOffset": [
+      3,
+      3
+    ],
+    "color": "rgb(241, 243, 244)",
+    "fill": true
+  }
+}

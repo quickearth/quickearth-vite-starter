@@ -1,0 +1,23 @@
+{
+  "name": "quickearth-vite-starter",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-externals": "^0.6.2"
+  },
+  "dependencies": {
+    "@quickearth/cesium": "^3.0.5",
+    "@quickearth/core": "^3.0.5",
+    "@quickearth/leaflet": "^3.0.5",
+    "leaflet": "^1.9.4"
+  }
+}

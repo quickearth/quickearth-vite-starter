@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickEarth-Vite-Starer</title>
+  <link rel="stylesheet" href="public/css/fonts/fonts.css" />
+  <link rel="stylesheet" href="public/libs/cesium/Cesium/Widgets/widgets.css" />
+  <!--发布版换成非Unminified版本-->
+  <script src="public/libs/cesium/CesiumUnminified/Cesium.js"></script>
+  <!--如果使用mapbox-gl的图层，可以取消注释-->
+  <!-- <link rel="stylesheet" href="https://www.unpkg.com/mapbox-gl@1.13.2/dist/mapbox-gl.css"/> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.13.2/mapbox-gl.min.css" integrity="sha512-f9ygkycTxYz4ZGWOrdRHvW8RvVtF0BzP0nl2a2eF2LE4N5FzXqtHnxip+Ses43V9l9QwP0iGs7NvCp7yrdBXpg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.13.2/mapbox-gl.min.js" integrity="sha512-hm2VuPQZJWTF+Stv1MNk2EyvFlLIDaBnOUF8L33lGCxrbvIZP6Ub/P6LZNOU2eLVF9F6rnHU/CvTbOtbOVg0fw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <!--如需使用geotiff前端解码，需取消注释-->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/geotiff"></script> -->
+</head>
+
+<body>
+  <div id="map" style="position:absolute;top:0px;left:0px;width:50%;height:100%;overflow:hidden"></div>
+  <div id="map3d" style="position:absolute;top:0px;left:50%;width:50%;height:100%;overflow:hidden;background-color: aqua;"></div>  <!--for cesium-->
+  <div id="credit" style="display: none"></div>
+  <div id="plugin"></div>
+  <!--初始化风场字体，避免第一次加载基于字体的风场时出现乱码-->
+  <div style="font-family: wind;left: 0px;top: 0px;position: absolute;z-index: -999999;font-size: 1;">6666</div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

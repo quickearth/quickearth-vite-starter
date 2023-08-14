@@ -1,0 +1,8 @@
+{
+    "polygon": {
+        "shadowColor": "white",
+        "shadowBlur":10,
+        "color": "gray",
+        "fill":true
+    }
+}

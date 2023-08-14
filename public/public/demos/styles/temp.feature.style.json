@@ -1,0 +1,51 @@
+{
+    "point": {
+        "size": 6,
+        "visible": true,
+        "color": "orange",
+        "strokeColor": "red",
+        "strokeWidth": 1,
+        "label": [
+            {
+                "image": {
+                    "data": "text.png",
+                    "color": "rgba(255,255,0,0.6)",
+                    "size": [
+                        32,
+                        32
+                    ],
+                    "angle": 60,
+                    "offset": [
+                        10,
+                        -10
+                    ],
+                    "visible": true
+                },
+                "text": {
+                    "data": "$Name",
+                    "font": "15px Arial",
+                    "angle": "90#degree2arc",
+                    "color": [
+                        255,
+                        100,
+                        100,
+                        0.8
+                    ],
+                    "strokeColor": "#ffffff",
+                    "strokeWidth": 1,
+                    "backColor": "rgba(0,0,255,0.5)",
+                    "backCircle": false,
+                    "backPadding": [
+                        5,
+                        5
+                    ],
+                    "offset": [
+                        -10,
+                        10
+                    ],
+                    "visible": true
+                }
+            }
+        ]
+    }
+}

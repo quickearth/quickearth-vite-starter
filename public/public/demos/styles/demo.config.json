@@ -1,0 +1,156 @@
+{
+  "images": {
+    "plane": "demos/images/plane.png",
+    "level1": "demos/images/level1.jpg",
+    "level2": "demos/images/level2.jpg",
+    "level3": "demos/images/level3.jpg",
+    "level4": "demos/images/level4.jpg",
+    "precp": "demos/images/rain.png",
+    "heart": "demos/images/heart.png",
+    "rain": "demos/images/rain.png",
+    "wind": "demos/images/wind.png",
+    "wind-arrow": "demos/images/wind.arrow.png",
+    "cs-cool-warm": "demos/styles/cs/cool-warm.png",
+    "cs-temp": "demos/styles/cs/temp.cs.png",
+    "cs-wind": "demos/styles/cs/wind.cs.png",
+    "white-16": "demos/images/white_16.png",
+    "wave-16": "demos/images/wave_16.png",
+    "wave-32": "demos/images/wave_32.png",
+    "line-16": "demos/images/line_16.png",
+    "line-32": "demos/images/line_32.png",
+    "heart_128": "demos/images/heart_128.png",
+    "arrow": "demos/images/arrow.png",
+    "cloud0": "demos/images/cloud0.png",
+    "cloud1": "demos/images/cloud1.png",
+    "cloud2": "demos/images/cloud2.png",
+    "cloud3": "demos/images/cloud3.png",
+    "cloud4": "demos/images/cloud4.png",
+    "cloud5": "demos/images/cloud5.png",
+    "cloud6": "demos/images/cloud6.png",
+    "cloud7": "demos/images/cloud7.png"
+  },
+  "stopRules": {
+    "color-temp": "demos/styles/temp.color.rules.json",
+    "image-warning": {
+      "stops": [
+        {
+          "value": "一级",
+          "stop": "level1#res"
+        },
+        {
+          "value": "二级",
+          "stop": "level2#res"
+        },
+        {
+          "value": "三级",
+          "stop": "level3#res"
+        },
+        {
+          "value": "四级",
+          "stop": "level4#res"
+        }
+      ],
+      "fieldName": "level",
+      "action": "unique"
+    },
+    "precp-icon": {
+      "stops": [
+        {
+          "value": 0,
+          "stop": [
+            0,
+            0
+          ]
+        },
+        {
+          "value": 5,
+          "stop": [
+            10,
+            10
+          ]
+        },
+        {
+          "value": 10,
+          "stop": [
+            15,
+            15
+          ]
+        },
+        {
+          "value": 25,
+          "stop": [
+            20,
+            20
+          ]
+        },
+        {
+          "value": 50,
+          "stop": [
+            30,
+            30
+          ]
+        },
+        {
+          "value": 999999,
+          "stop": [
+            0,
+            0
+          ]
+        }
+      ],
+      "fieldName": "precp"
+    },
+    "precp-vis": {
+      "stops": [
+        {
+          "value": 0.1,
+          "stop": false
+        },
+        {
+          "value": 9000,
+          "stop": true
+        },
+        {
+          "value": 999999,
+          "stop": false
+        }
+      ],
+      "fieldName": "precp"
+    },
+    "color-rh": "demos/styles/rh.color.rules.json",
+    "image-wind": "demos/styles/wind.img.rules.json",
+    "color-wind": "demos/styles/wind.color.rules.json",
+    "image-wind-arrow": "demos/styles/wind.img.arrow.rules.json",
+    "color-precp": "demos/styles/precp.color.rules.json",
+    "color-temp-ano": "demos/styles/temp.ano.color.rules.json",
+    "color-dir": "demos/styles/dir.color.rules.json",
+    "color-cappi-volume": "demos/styles/cappi.volume.color.rules.json",
+    "color-cappi-volume-normal": "demos/styles/cappi.volume.normal.color.rules.json",
+    "color-et": "demos/styles/et.color.rules.json",
+    "color-cr": "demos/styles/cr.color.rules.json",
+    "color-cr-mcb": "demos/styles/mcb.cr.color.rules.json",
+    "color-sate-vis": "demos/styles/sate.vis.color.rules.json",
+    "color-sate-ir": "demos/styles/sate.ir.color.rules.json",
+    "color-sate-ir-fire": "demos/styles/sate.ir.color.rules.fire.json",
+    "color-sate-vap": "demos/styles/sate.vap.color.rules.json",
+    "color-radar-section": "demos/styles/dbz.section.color.rules.json",
+    "color-wind-volume": "demos/styles/wind.volume.color.rules.json"
+  },
+  "featureStyles": {
+    "tempStyle": "demos/styles/temp.feature.style.json",
+    "preStyle": {
+      "polygon": {
+        "fill": true,
+        "color": "image-warning#res"
+      }
+    },
+    "style-china": "demos/styles/china.feature.style.json",
+    "style-china@dark": "demos/styles/theme-dark/china.feature.style.dark.json"
+  },
+  "jsonFiles": {
+  },
+  "rawFiles": {
+  },
+  "texts": {
+  }
+}

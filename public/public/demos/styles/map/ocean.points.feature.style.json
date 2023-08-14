@@ -1,0 +1,21 @@
+{
+  "point": {
+    "fill": false,
+    "visible": true,
+    "label": [
+      {
+        "text": {
+          "data": "$ChineseNam",
+          "font": "italic bold 25px Arial",
+          "avoidCollison": false,
+          "color": [
+            0,
+            0,
+            0,
+            0.5
+          ]
+        }
+      }
+    ]
+  }
+}

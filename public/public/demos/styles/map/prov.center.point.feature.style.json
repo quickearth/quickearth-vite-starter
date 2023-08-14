@@ -1,0 +1,23 @@
+{
+    "point": {
+        "size": 6,
+        "visible": true,
+        "color": "white",
+        "strokeColor": "red",
+        "strokeWidth": 2,
+        "label": [
+            {
+                "text": {
+                    "data": "$NAME",
+                    "font": "15px Arial",
+                    "color": [
+                        100,
+                        100,
+                        100,
+                        0.8
+                    ]
+                }
+            }
+        ]
+    }
+}

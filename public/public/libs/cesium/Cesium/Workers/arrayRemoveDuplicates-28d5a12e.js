@@ -1,0 +1,2 @@
+define(["exports","./Check-d18af7c4","./when-208fe5b0","./Math-3ba16bed"],function(e,h,l,t){"use strict";var s=t.CesiumMath.EPSILON10;e.arrayRemoveDuplicates=function(e,t,n){if(h.Check.defined("equalsEpsilon",t),l.defined(e)){n=l.defaultValue(n,!1);var i,r,f,a=e.length;if(a<2)return e;for(i=1;i<a&&!t(r=e[i-1],f=e[i],s);++i);if(i===a)return n&&t(e[0],e[e.length-1],s)?e.slice(1):e;for(var u=e.slice(0,i);i<a;++i)t(r,f=e[i],s)||(u.push(f),r=f);return n&&1<u.length&&t(u[0],u[u.length-1],s)&&u.shift(),u}}});
+//# sourceMappingURL=arrayRemoveDuplicates-28d5a12e.js.map

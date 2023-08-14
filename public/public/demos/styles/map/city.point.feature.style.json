@@ -1,0 +1,30 @@
+{
+  "point": {
+    "fill": true,
+    "size": 3,
+    "visible": true,
+    "color": "white",
+    "strokeColor": "rgb(96, 96, 96)",
+    "strokeWidth": 1,
+    "zoomMin": 7,
+    "label": [
+      {
+        "text": {
+          "data": "$name",
+          "font": "12px Arial",
+          "avoidCollison": true,
+          "offset": [
+            0,
+            -10
+          ],
+          "color": [
+            96,
+            96,
+            96,
+            1
+          ]
+        }
+      }
+    ]
+  }
+}

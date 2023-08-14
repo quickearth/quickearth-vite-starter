@@ -1,0 +1,36 @@
+{
+  "name": "@saschazar/wasm-webp",
+  "version": "3.0.1",
+  "description": "Encodes and decodes WebP images using WebAssembly",
+  "keywords": [
+    "color",
+    "rgb",
+    "image",
+    "webp",
+    "encoder",
+    "decoder",
+    "codec",
+    "webassembly",
+    "browser",
+    "web worker"
+  ],
+  "main": "wasm_webp.js",
+  "repository": "https://github.com/saschazar21/webassembly",
+  "author": "Sascha Zarhuber <saschazar21@yahoo.de>",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "napa && docker run --rm -v $(pwd):/src -e SKIP_LIBWEBP=$SKIP_LIBWEBP emscripten/emsdk:latest ./build.sh"
+  },
+  "napa": {
+    "libwebp": "webmproject/libwebp#v1.1.0"
+  },
+  "devDependencies": {
+    "napa": "^3.0.0"
+  },
+  "gitHead": "d420f380c7eafbffc902df7b1ffe1bf0d76df38e"
+}

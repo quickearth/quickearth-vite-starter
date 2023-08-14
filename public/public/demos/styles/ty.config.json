@@ -1,0 +1,43 @@
+{
+  "images": {
+    "plane": "images/plane.png",
+    "precp": "images/rain.png",
+    "rain": "images/rain.png",
+    "wind": "images/wind.png",
+    "wind-arrow": "images/wind.arrow.png",
+    "typhoon": "images/typhoon.png",
+    "point": "images/point.png"
+  },
+  "stopRules": {
+    "color-temp": "styles/temp.color.rules.json",
+    "color-rh": "styles/rh.color.rules.json",
+    "image-wind": "styles/wind.img.rules.json",
+    "color-wind": "styles/wind.color.rules.json",
+    "image-wind-arrow": "styles/wind.img.arrow.rules.json",
+    "color-precp": "styles/precp.color.rules.json",
+    "color-sate-ir": "styles/sate.ir.color.rules.json",
+    "color-pslp": "styles/pslp.color.rules.json",
+    "color-tcc": "styles/tcc.color.rules.json",
+    "color-cr": "styles/cr.color.rules.json",
+    "color-vis": "styles/vis.color.rules.json",
+    "color-sate-vis": "styles/sate.vis.color.rules.json"
+  },
+  "featureStyles": {
+    "tempStyle": "styles/temp.feature.style.json",
+    "map_world": "styles/map/world.feature.style.json",
+    "map_china": "styles/map/china.feature.style.json",
+    "map_china_line": "styles/map/china.line.feature.style.json",
+    "map_prov": "styles/map/prov.feature.style.json",
+    "map_city": "styles/map/city.feature.style.json",
+    "map_prov_center_point": "styles/map/prov.center.point.feature.style.json",
+    "map_city_point": "styles/map/city.point.feature.style.json",
+    "map_rivers": "styles/map/rivers.feature.style.json",
+    "map_lakes": "styles/map/lakes.feature.style.json",
+    "map_capitals": "styles/map/capitals.feature.style.json",
+    "map_ocean_points": "styles/map/ocean.points.feature.style.json",
+    "map_country_bounds": "styles/map/country.bounds.feature.style.json",
+    "map_world_line": "styles/map/world.line.feature.style.json"
+  },
+  "jsonFiles": {},
+  "rawFiles": {}
+}

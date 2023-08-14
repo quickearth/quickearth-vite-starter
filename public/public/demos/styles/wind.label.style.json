@@ -1,0 +1,14 @@
+{
+    "text": {
+        "data": "#decimal",
+        "offset": [
+            0,
+            15
+        ]
+    },
+    "image": {
+        "data": "image-wind-arrow#res",
+        "angle": "#degree2arc|1",
+        "color": "color-wind#res"
+    }
+}
