@@ -15,9 +15,9 @@
     "vite-plugin-externals": "^0.6.2"
   },
   "dependencies": {
-    "@quickearth/cesium": "^3.0.5",
-    "@quickearth/core": "^3.0.5",
-    "@quickearth/leaflet": "^3.0.5",
+    "@quickearth/cesium": "^3.1.1",
+    "@quickearth/core": "^3.1.1",
+    "@quickearth/leaflet": "^3.1.1",
     "leaflet": "^1.9.4"
   }
 }

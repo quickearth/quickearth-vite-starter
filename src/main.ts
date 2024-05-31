@@ -1,11 +1,19 @@
+/*
+ * @Author: mofangbao baoweiwei@mlogcn.com
+ * @Date: 2023-08-14 15:49:35
+ * @LastEditors: mofangbao baoweiwei@mlogcn.com
+ * @LastEditTime: 2024-05-31 11:50:29
+ * @FilePath: \quickearth-vite-starter\src\main.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import L from "leaflet"
-import {GrayImageGridDataProvider, GridDataGLFillMode, GridDataType, IConfigCreatableLayer, IGridDataOptions, IPixelLayerStyle3DOptions, IPixelLayerStyleOptions, consts, ensureGridDataOptions, init, predefinedImageTiles, resourceService} from "@quickearth/core"
-import {LMap, LPixelLayer, createTileLayer} from "@quickearth/leaflet";
-import {CPixelLayer, CView} from "@quickearth/cesium";
+import { GrayImageGridDataProvider, GridDataGLFillMode, GridDataType, IConfigCreatableLayer, IGridDataOptions, IPixelLayerStyle3DOptions, IPixelLayerStyleOptions, consts, ensureGridDataOptions, init, predefinedImageTiles, resourceService } from "@quickearth/core"
+import { LMap, LPixelLayer, createTileLayer } from "@quickearth/leaflet";
+import { CPixelLayer, CView } from "@quickearth/cesium";
 import "leaflet/dist/leaflet.css"
-import {Ion} from "cesium";
+import { Ion } from "cesium";
 
-Ion.defaultAccessToken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5NjE0YzZiNS0wNjJiLTQ5NjEtYmMyZC01YWYzZjk1NmYzMzYiLCJpZCI6OTgxOCwic2NvcGVzIjpbImFzciIsImdjIl0sImlhdCI6MTU1NDk5MTkxNn0.RMgKv7MDKkXaV0df21IBBqikp2abPoUYeAPB42fHJes";
+Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5NjE0YzZiNS0wNjJiLTQ5NjEtYmMyZC01YWYzZjk1NmYzMzYiLCJpZCI6OTgxOCwic2NvcGVzIjpbImFzciIsImdjIl0sImlhdCI6MTU1NDk5MTkxNn0.RMgKv7MDKkXaV0df21IBBqikp2abPoUYeAPB42fHJes";
 init();
 const map = new LMap("map", { crs: L.CRS.EPSG3857, fadeAnimation: false, zoomControl: false }).setView([25.5, 116.5], 7);
 const tileLayer = createTileLayer(predefinedImageTiles.windy, { pane: consts.customPanes.topmap.name });

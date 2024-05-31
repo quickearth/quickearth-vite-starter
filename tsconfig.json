@@ -22,7 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "cesium*": [
-        "./public/public/libs/cesium/Cesium/Cesium.d.ts"
+        "./public/public/libs/cesium/Cesium.d.ts"
       ]
     }
   },

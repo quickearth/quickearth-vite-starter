@@ -1,236 +1,225 @@
-define(['./arrayRemoveDuplicates-2bf37b78', './Transforms-b34b6ebc', './Matrix3-81bdfbf4', './Check-e01dbea3', './ComponentDatatype-614bb7b9', './CoplanarPolygonGeometryLibrary-f4799a17', './defaultValue-040c41f9', './GeometryAttribute-64873e1d', './GeometryAttributes-52134c76', './GeometryInstance-c4662957', './GeometryPipeline-68970aa4', './IndexDatatype-086e75a1', './PolygonGeometryLibrary-0536de2a', './Math-f7bd710c', './Matrix2-48a38c21', './RuntimeError-3c5db370', './combine-6eb6e848', './WebGLConstants-f7267ced', './OrientedBoundingBox-2f549917', './EllipsoidTangentPlane-cb9bbcc9', './AxisAlignedBoundingBox-e9c2cc4d', './IntersectionTests-3483e283', './Plane-c6f53110', './AttributeCompression-d657fc09', './EncodedCartesian3-ec1b16bd', './ArcType-3d26c7db', './EllipsoidRhumbLine-012aba77', './PolygonPipeline-4a2d0f02'], (function (arrayRemoveDuplicates, Transforms, Matrix3, Check, ComponentDatatype, CoplanarPolygonGeometryLibrary, defaultValue, GeometryAttribute, GeometryAttributes, GeometryInstance, GeometryPipeline, IndexDatatype, PolygonGeometryLibrary, Math, Matrix2, RuntimeError, combine, WebGLConstants, OrientedBoundingBox, EllipsoidTangentPlane, AxisAlignedBoundingBox, IntersectionTests, Plane, AttributeCompression, EncodedCartesian3, ArcType, EllipsoidRhumbLine, PolygonPipeline) { 'use strict';
+/**
+ * @license
+ * Cesium - https://github.com/CesiumGS/cesium
+ * Version 1.116
+ *
+ * Copyright 2011-2022 Cesium Contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Columbus View (Pat. Pend.)
+ *
+ * Portions licensed separately.
+ * See https://github.com/CesiumGS/cesium/blob/main/LICENSE.md for full licensing details.
+ */
 
-  function createGeometryFromPositions(positions) {
-    const length = positions.length;
-    const flatPositions = new Float64Array(length * 3);
-    const indices = IndexDatatype.IndexDatatype.createTypedArray(length, length * 2);
+import {
+  CoplanarPolygonGeometryLibrary_default
+} from "./chunk-QKBGRKKG.js";
+import "./chunk-WHUSTDIB.js";
+import {
+  PolygonGeometryLibrary_default
+} from "./chunk-C3XBUYBO.js";
+import "./chunk-C6OI26DR.js";
+import {
+  GeometryInstance_default
+} from "./chunk-73FKKY52.js";
+import {
+  GeometryPipeline_default
+} from "./chunk-P2YAAMT2.js";
+import "./chunk-E6WXPSJS.js";
+import "./chunk-Z7FQLK6N.js";
+import "./chunk-LQJ5FFFR.js";
+import "./chunk-TJBU6GML.js";
+import "./chunk-6WF3KIF5.js";
+import {
+  arrayRemoveDuplicates_default
+} from "./chunk-EPKE7GE3.js";
+import "./chunk-DGDUKCJJ.js";
+import "./chunk-L4BW3RUA.js";
+import "./chunk-NP2GYYE5.js";
+import {
+  IndexDatatype_default
+} from "./chunk-P4XKB3QZ.js";
+import {
+  GeometryAttributes_default
+} from "./chunk-EOXYZ34O.js";
+import {
+  GeometryAttribute_default,
+  Geometry_default,
+  PrimitiveType_default
+} from "./chunk-2ZBL3MVO.js";
+import {
+  BoundingSphere_default
+} from "./chunk-7COR472O.js";
+import "./chunk-2KACWKS4.js";
+import "./chunk-X6XOMPWL.js";
+import "./chunk-2XPLH3JY.js";
+import {
+  ComponentDatatype_default
+} from "./chunk-NZWNZA6S.js";
+import {
+  Cartesian3_default,
+  Ellipsoid_default
+} from "./chunk-ADOVHYWO.js";
+import "./chunk-QCQUZGXI.js";
+import "./chunk-I37B3MZ2.js";
+import "./chunk-N4KXMWQU.js";
+import {
+  defaultValue_default
+} from "./chunk-TZORKRNK.js";
+import {
+  Check_default
+} from "./chunk-SS4ESNE3.js";
+import {
+  defined_default
+} from "./chunk-YDVSBWEO.js";
 
-    let positionIndex = 0;
-    let index = 0;
-
-    for (let i = 0; i < length; i++) {
-      const position = positions[i];
-      flatPositions[positionIndex++] = position.x;
-      flatPositions[positionIndex++] = position.y;
-      flatPositions[positionIndex++] = position.z;
-
-      indices[index++] = i;
-      indices[index++] = (i + 1) % length;
+// packages/engine/Source/Core/CoplanarPolygonOutlineGeometry.js
+function createGeometryFromPositions(positions) {
+  const length = positions.length;
+  const flatPositions = new Float64Array(length * 3);
+  const indices = IndexDatatype_default.createTypedArray(length, length * 2);
+  let positionIndex = 0;
+  let index = 0;
+  for (let i = 0; i < length; i++) {
+    const position = positions[i];
+    flatPositions[positionIndex++] = position.x;
+    flatPositions[positionIndex++] = position.y;
+    flatPositions[positionIndex++] = position.z;
+    indices[index++] = i;
+    indices[index++] = (i + 1) % length;
+  }
+  const attributes = new GeometryAttributes_default({
+    position: new GeometryAttribute_default({
+      componentDatatype: ComponentDatatype_default.DOUBLE,
+      componentsPerAttribute: 3,
+      values: flatPositions
+    })
+  });
+  return new Geometry_default({
+    attributes,
+    indices,
+    primitiveType: PrimitiveType_default.LINES
+  });
+}
+function CoplanarPolygonOutlineGeometry(options) {
+  options = defaultValue_default(options, defaultValue_default.EMPTY_OBJECT);
+  const polygonHierarchy = options.polygonHierarchy;
+  Check_default.defined("options.polygonHierarchy", polygonHierarchy);
+  this._polygonHierarchy = polygonHierarchy;
+  this._workerName = "createCoplanarPolygonOutlineGeometry";
+  this.packedLength = PolygonGeometryLibrary_default.computeHierarchyPackedLength(
+    polygonHierarchy,
+    Cartesian3_default
+  ) + 1;
+}
+CoplanarPolygonOutlineGeometry.fromPositions = function(options) {
+  options = defaultValue_default(options, defaultValue_default.EMPTY_OBJECT);
+  Check_default.defined("options.positions", options.positions);
+  const newOptions = {
+    polygonHierarchy: {
+      positions: options.positions
     }
-
-    const attributes = new GeometryAttributes.GeometryAttributes({
-      position: new GeometryAttribute.GeometryAttribute({
-        componentDatatype: ComponentDatatype.ComponentDatatype.DOUBLE,
-        componentsPerAttribute: 3,
-        values: flatPositions,
-      }),
-    });
-
-    return new GeometryAttribute.Geometry({
-      attributes: attributes,
-      indices: indices,
-      primitiveType: GeometryAttribute.PrimitiveType.LINES,
-    });
-  }
-
-  /**
-   * A description of the outline of a polygon composed of arbitrary coplanar positions.
-   *
-   * @alias CoplanarPolygonOutlineGeometry
-   * @constructor
-   *
-   * @param {Object} options Object with the following properties:
-   * @param {PolygonHierarchy} options.polygonHierarchy A polygon hierarchy that can include holes.
-   *
-   * @see CoplanarPolygonOutlineGeometry.createGeometry
-   *
-   * @example
-   * const polygonOutline = new Cesium.CoplanarPolygonOutlineGeometry({
-   *   positions : Cesium.Cartesian3.fromDegreesArrayHeights([
-   *      -90.0, 30.0, 0.0,
-   *      -90.0, 30.0, 1000.0,
-   *      -80.0, 30.0, 1000.0,
-   *      -80.0, 30.0, 0.0
-   *   ])
-   * });
-   * const geometry = Cesium.CoplanarPolygonOutlineGeometry.createGeometry(polygonOutline);
-   */
-  function CoplanarPolygonOutlineGeometry(options) {
-    options = defaultValue.defaultValue(options, defaultValue.defaultValue.EMPTY_OBJECT);
-    const polygonHierarchy = options.polygonHierarchy;
-    //>>includeStart('debug', pragmas.debug);
-    Check.Check.defined("options.polygonHierarchy", polygonHierarchy);
-    //>>includeEnd('debug');
-
-    this._polygonHierarchy = polygonHierarchy;
-    this._workerName = "createCoplanarPolygonOutlineGeometry";
-
-    /**
-     * The number of elements used to pack the object into an array.
-     * @type {Number}
-     */
-    this.packedLength =
-      PolygonGeometryLibrary.PolygonGeometryLibrary.computeHierarchyPackedLength(
-        polygonHierarchy,
-        Matrix3.Cartesian3
-      ) + 1;
-  }
-
-  /**
-   * A description of a coplanar polygon outline from an array of positions.
-   *
-   * @param {Object} options Object with the following properties:
-   * @param {Cartesian3[]} options.positions An array of positions that defined the corner points of the polygon.
-   * @returns {CoplanarPolygonOutlineGeometry}
-   */
-  CoplanarPolygonOutlineGeometry.fromPositions = function (options) {
-    options = defaultValue.defaultValue(options, defaultValue.defaultValue.EMPTY_OBJECT);
-
-    //>>includeStart('debug', pragmas.debug);
-    Check.Check.defined("options.positions", options.positions);
-    //>>includeEnd('debug');
-
-    const newOptions = {
-      polygonHierarchy: {
-        positions: options.positions,
-      },
-    };
-    return new CoplanarPolygonOutlineGeometry(newOptions);
   };
-
-  /**
-   * Stores the provided instance into the provided array.
-   *
-   * @param {CoplanarPolygonOutlineGeometry} value The value to pack.
-   * @param {Number[]} array The array to pack into.
-   * @param {Number} [startingIndex=0] The index into the array at which to start packing the elements.
-   *
-   * @returns {Number[]} The array that was packed into
-   */
-  CoplanarPolygonOutlineGeometry.pack = function (value, array, startingIndex) {
-    //>>includeStart('debug', pragmas.debug);
-    Check.Check.typeOf.object("value", value);
-    Check.Check.defined("array", array);
-    //>>includeEnd('debug');
-
-    startingIndex = defaultValue.defaultValue(startingIndex, 0);
-
-    startingIndex = PolygonGeometryLibrary.PolygonGeometryLibrary.packPolygonHierarchy(
-      value._polygonHierarchy,
-      array,
-      startingIndex,
-      Matrix3.Cartesian3
-    );
-
-    array[startingIndex] = value.packedLength;
-
-    return array;
-  };
-
-  const scratchOptions = {
-    polygonHierarchy: {},
-  };
-  /**
-   * Retrieves an instance from a packed array.
-   *
-   * @param {Number[]} array The packed array.
-   * @param {Number} [startingIndex=0] The starting index of the element to be unpacked.
-   * @param {CoplanarPolygonOutlineGeometry} [result] The object into which to store the result.
-   * @returns {CoplanarPolygonOutlineGeometry} The modified result parameter or a new CoplanarPolygonOutlineGeometry instance if one was not provided.
-   */
-  CoplanarPolygonOutlineGeometry.unpack = function (
+  return new CoplanarPolygonOutlineGeometry(newOptions);
+};
+CoplanarPolygonOutlineGeometry.pack = function(value, array, startingIndex) {
+  Check_default.typeOf.object("value", value);
+  Check_default.defined("array", array);
+  startingIndex = defaultValue_default(startingIndex, 0);
+  startingIndex = PolygonGeometryLibrary_default.packPolygonHierarchy(
+    value._polygonHierarchy,
     array,
     startingIndex,
-    result
-  ) {
-    //>>includeStart('debug', pragmas.debug);
-    Check.Check.defined("array", array);
-    //>>includeEnd('debug');
-
-    startingIndex = defaultValue.defaultValue(startingIndex, 0);
-
-    const polygonHierarchy = PolygonGeometryLibrary.PolygonGeometryLibrary.unpackPolygonHierarchy(
-      array,
-      startingIndex,
-      Matrix3.Cartesian3
-    );
-    startingIndex = polygonHierarchy.startingIndex;
-    delete polygonHierarchy.startingIndex;
-    const packedLength = array[startingIndex];
-
-    if (!defaultValue.defined(result)) {
-      result = new CoplanarPolygonOutlineGeometry(scratchOptions);
-    }
-
-    result._polygonHierarchy = polygonHierarchy;
-    result.packedLength = packedLength;
-
-    return result;
-  };
-
-  /**
-   * Computes the geometric representation of an arbitrary coplanar polygon, including its vertices, indices, and a bounding sphere.
-   *
-   * @param {CoplanarPolygonOutlineGeometry} polygonGeometry A description of the polygon.
-   * @returns {Geometry|undefined} The computed vertices and indices.
-   */
-  CoplanarPolygonOutlineGeometry.createGeometry = function (polygonGeometry) {
-    const polygonHierarchy = polygonGeometry._polygonHierarchy;
-
-    let outerPositions = polygonHierarchy.positions;
-    outerPositions = arrayRemoveDuplicates.arrayRemoveDuplicates(
-      outerPositions,
-      Matrix3.Cartesian3.equalsEpsilon,
-      true
-    );
-    if (outerPositions.length < 3) {
-      return;
-    }
-    const isValid = CoplanarPolygonGeometryLibrary.CoplanarPolygonGeometryLibrary.validOutline(outerPositions);
-    if (!isValid) {
-      return undefined;
-    }
-
-    const polygons = PolygonGeometryLibrary.PolygonGeometryLibrary.polygonOutlinesFromHierarchy(
-      polygonHierarchy,
-      false
-    );
-
-    if (polygons.length === 0) {
-      return undefined;
-    }
-
-    const geometries = [];
-
-    for (let i = 0; i < polygons.length; i++) {
-      const geometryInstance = new GeometryInstance.GeometryInstance({
-        geometry: createGeometryFromPositions(polygons[i]),
-      });
-      geometries.push(geometryInstance);
-    }
-
-    const geometry = GeometryPipeline.GeometryPipeline.combineInstances(geometries)[0];
-    const boundingSphere = Transforms.BoundingSphere.fromPoints(polygonHierarchy.positions);
-
-    return new GeometryAttribute.Geometry({
-      attributes: geometry.attributes,
-      indices: geometry.indices,
-      primitiveType: geometry.primitiveType,
-      boundingSphere: boundingSphere,
-    });
-  };
-
-  function createCoplanarPolygonOutlineGeometry(polygonGeometry, offset) {
-    if (defaultValue.defined(offset)) {
-      polygonGeometry = CoplanarPolygonOutlineGeometry.unpack(
-        polygonGeometry,
-        offset
-      );
-    }
-    polygonGeometry._ellipsoid = Matrix3.Ellipsoid.clone(polygonGeometry._ellipsoid);
-    return CoplanarPolygonOutlineGeometry.createGeometry(polygonGeometry);
+    Cartesian3_default
+  );
+  array[startingIndex] = value.packedLength;
+  return array;
+};
+var scratchOptions = {
+  polygonHierarchy: {}
+};
+CoplanarPolygonOutlineGeometry.unpack = function(array, startingIndex, result) {
+  Check_default.defined("array", array);
+  startingIndex = defaultValue_default(startingIndex, 0);
+  const polygonHierarchy = PolygonGeometryLibrary_default.unpackPolygonHierarchy(
+    array,
+    startingIndex,
+    Cartesian3_default
+  );
+  startingIndex = polygonHierarchy.startingIndex;
+  delete polygonHierarchy.startingIndex;
+  const packedLength = array[startingIndex];
+  if (!defined_default(result)) {
+    result = new CoplanarPolygonOutlineGeometry(scratchOptions);
   }
+  result._polygonHierarchy = polygonHierarchy;
+  result.packedLength = packedLength;
+  return result;
+};
+CoplanarPolygonOutlineGeometry.createGeometry = function(polygonGeometry) {
+  const polygonHierarchy = polygonGeometry._polygonHierarchy;
+  let outerPositions = polygonHierarchy.positions;
+  outerPositions = arrayRemoveDuplicates_default(
+    outerPositions,
+    Cartesian3_default.equalsEpsilon,
+    true
+  );
+  if (outerPositions.length < 3) {
+    return;
+  }
+  const isValid = CoplanarPolygonGeometryLibrary_default.validOutline(outerPositions);
+  if (!isValid) {
+    return void 0;
+  }
+  const polygons = PolygonGeometryLibrary_default.polygonOutlinesFromHierarchy(
+    polygonHierarchy,
+    false
+  );
+  if (polygons.length === 0) {
+    return void 0;
+  }
+  const geometries = [];
+  for (let i = 0; i < polygons.length; i++) {
+    const geometryInstance = new GeometryInstance_default({
+      geometry: createGeometryFromPositions(polygons[i])
+    });
+    geometries.push(geometryInstance);
+  }
+  const geometry = GeometryPipeline_default.combineInstances(geometries)[0];
+  const boundingSphere = BoundingSphere_default.fromPoints(polygonHierarchy.positions);
+  return new Geometry_default({
+    attributes: geometry.attributes,
+    indices: geometry.indices,
+    primitiveType: geometry.primitiveType,
+    boundingSphere
+  });
+};
+var CoplanarPolygonOutlineGeometry_default = CoplanarPolygonOutlineGeometry;
 
-  return createCoplanarPolygonOutlineGeometry;
-
-}));
+// packages/engine/Source/Workers/createCoplanarPolygonOutlineGeometry.js
+function createCoplanarPolygonOutlineGeometry(polygonGeometry, offset) {
+  if (defined_default(offset)) {
+    polygonGeometry = CoplanarPolygonOutlineGeometry_default.unpack(
+      polygonGeometry,
+      offset
+    );
+  }
+  polygonGeometry._ellipsoid = Ellipsoid_default.clone(polygonGeometry._ellipsoid);
+  return CoplanarPolygonOutlineGeometry_default.createGeometry(polygonGeometry);
+}
+var createCoplanarPolygonOutlineGeometry_default = createCoplanarPolygonOutlineGeometry;
+export {
+  createCoplanarPolygonOutlineGeometry_default as default
+};
